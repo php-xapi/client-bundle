@@ -1,0 +1,35 @@
+{
+    "name": "php-xapi/client-bundle",
+    "type": "symfony-bundle",
+    "description": "Experience API (xAPI) client integration into the Symfony Framework",
+    "keywords": ["xAPI", "Experience API", "Tin Can API", "client", "Symfony", "bundle"],
+    "homepage": "https://github.com/php-xapi/client-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Flothmann",
+            "homepage": "https://github.com/xabbuh"
+        }
+    ],
+    "require": {
+        "php": "^5.3 || ^7.0",
+        "php-xapi/client": "^0.5",
+        "symfony/config": "^2.7 || ^3.1",
+        "symfony/dependency-injection": "^2.7 || ^3.1",
+        "symfony/http-kernel": "^2.7 || ^3.1"
+    },
+    "require-dev": {
+        "php-http/mock-client": "^0.3"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "XApi\\ClientBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+           "dev-master": "0.1.x-dev"
+        }
+    }
+}
