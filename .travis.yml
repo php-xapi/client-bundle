@@ -1,0 +1,27 @@
+sudo: false
+
+language: php
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+php:
+  - 5.5
+  - 5.6
+  - 7.0
+  - 7.1
+  - hhvm
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 5.4
+      env: COMPOSER_OPTIONS="--prefer-lowest --prefer-stable"
+
+before_install:
+  - if [[ "$TRAVIS_PHP_VERSION" != "hhvm" && "$TRAVIS_PHP_VERSION" != "7.1" && "$xdebug" != "yes" ]]; then phpenv config-rm xdebug.ini; fi
+
+# just ensure that dependencies can be installed until proper tests have been set up
+script:
+  - composer update $COMPOSER_OPTIONS
